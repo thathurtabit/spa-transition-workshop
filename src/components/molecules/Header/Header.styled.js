@@ -20,9 +20,41 @@ export const HeaderH1 = styled.h1`
 `;
 
 export const HeaderNav = styled.nav`
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+`;
+
+export const HeaderNavUl = styled.ul`
+  align-items: center;
   display: flex;
   flex-direction: row;
+  list-style-type: none;
+  padding: 0;
 `;
+
+export const HeaderNavLi = styled.li`
+  list-style-type: none;
+  margin: 20px;
+
+  a {
+    align-items: center;
+    background: ${props => props.theme.colors.secondary};
+    border-radius: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 20px;
+    justify-content: center;
+    padding: 5px;
+    width: 20px;
+
+    &.active {
+      background: ${props => props.theme.colors.primary};
+    }
+  }
+`;
+
+
 
 const HeaderStyled = styled.header`
   align-items: center;

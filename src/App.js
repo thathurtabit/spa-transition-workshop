@@ -12,9 +12,16 @@ injectGlobal`
   html,
   body {
     height: 100%;
+    overflow: hidden;
     padding: 0;
     margin: 0;
     min-height: 100%;
+  }
+
+  a:link,
+  a:active,
+  a:hover {
+    text-decoration: none;
   }
 
   body {

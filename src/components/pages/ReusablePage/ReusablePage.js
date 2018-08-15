@@ -16,5 +16,5 @@ const ReusablePage = (props) => {
 export default ReusablePage;
 
 ReusablePage.propTypes = {
-    locationPath: PropTypes.string.isRequired,
+    content: PropTypes.string.isRequired,
 }

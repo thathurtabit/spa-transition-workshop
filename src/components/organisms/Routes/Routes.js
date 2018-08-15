@@ -8,16 +8,17 @@ import ReusablePage from "../../pages/ReusablePage/ReusablePage";
 import PageWrap from "./Routes.styled";
 
 const PageTransition = props => (
-    <CSSTransition {...props} classNames="fade" timeout={1000} />
+    <CSSTransition {...props} classNames="fade" timeout={100} />
   );
 
 const Routes = (props) => {
-    const locationPath = props.location.pathname;
+    const {location} = props;
+    const locationPath = location.pathname;
     return (
         <TransitionGroup>
             <PageTransition key={locationPath}>
                 <PageWrap>
-                    <Switch location={props.location}>
+                    <Switch location={location}>
                         <Route exact path="/" component={() => <Home />} />
                         <Route exact path="/page-1" component={() => <ReusablePage content="Single Page Apps..." />} />
                         <Route exact path="/page-2" component={() => <ReusablePage content="Are"/>} />

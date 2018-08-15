@@ -9,7 +9,8 @@ export const PageWrap = styled.section`
 `;
 
 export const IndentContent = styled.section`
-    font-size: calc(${props => props.theme.fonts.baseSize} + 0.5vmin);
+    font-size: calc(${props => props.theme.fonts.baseSize} + 10vmin);
+    padding: 3rem;
     position: relative;
 `;
 
