@@ -6,7 +6,6 @@ import theme from "./theme/theme";
 import GATracker from './helpers/GATracker';
 import Header from './components/molecules/Header/Header';
 import Routes from './components/organisms/Routes/Routes';
-import ScrollToTop from './components/molecules/ScrollToTop/ScrollToTop';
 
 /* eslint-disable */
 injectGlobal`
@@ -44,14 +43,12 @@ const AppWrapper = styled.section`
 
 const App = () => (
   <BrowserRouter basename="/">
-    <ScrollToTop>
-      <ThemeProvider theme={theme}>
+    <ThemeProvider theme={theme}>
         <AppWrapper>
           <Header />
           <Route path="/" component={GATracker(Routes, {})} />
         </AppWrapper>
-      </ThemeProvider>
-    </ScrollToTop>
+    </ThemeProvider>
   </BrowserRouter>
 );
 

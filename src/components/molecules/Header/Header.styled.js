@@ -19,6 +19,11 @@ export const HeaderH1 = styled.h1`
   }
 `;
 
+export const HeaderNav = styled.nav`
+  display: flex;
+  flex-direction: row;
+`;
+
 const HeaderStyled = styled.header`
   align-items: center;
   display: flex;
