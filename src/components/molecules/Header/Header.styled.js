@@ -1,21 +1,19 @@
 import styled from "styled-components";
+import { NavLink } from 'react-router-dom';
+import HomeIcon from './img/home.svg';
 
-export const HeaderH1 = styled.h1`
-  a {
-    background-color: ${props => props.theme.colors.white};
-    display: block;
-    color: ${props => props.theme.colors.dark};
-    padding: 0 10px;
-    text-decoration: none;
-    transition: background-color ${props => props.theme.transition.duration};
+export const HomeLink = styled(NavLink)`
+  background: url(${HomeIcon}) no-repeat 4px 3px;
+  background-size: 90%;
+  border-radius: 100%;
+  height: 30px;
+  overflow: hidden;
+  padding: 0 !important;
+  text-indent: -9999em;
+  width: 30px;
 
-    &:hover {
-      background-color: ${props => props.theme.colors.primary};
-    }
-  }
-
-  @media screen and (min-width: ${props => props.theme.breakpoints.md}) {
-    margin: 1rem;
+  &:hover {
+    background-color: transparent;
   }
 `;
 
@@ -39,7 +37,6 @@ export const HeaderNavLi = styled.li`
 
   a {
     align-items: center;
-    background: ${props => props.theme.colors.secondary};
     border-radius: 100%;
     display: flex;
     flex-direction: column;
@@ -49,12 +46,11 @@ export const HeaderNavLi = styled.li`
     width: 20px;
 
     &.active {
-      background: ${props => props.theme.colors.primary};
+      background: ${props => props.theme.colors.dark};
+      color: ${props => props.theme.colors.primary};
     }
   }
 `;
-
-
 
 const HeaderStyled = styled.header`
   align-items: center;
@@ -67,10 +63,11 @@ const HeaderStyled = styled.header`
 
   @media screen and (min-width: ${props => props.theme.breakpoints.md}) {
     position: fixed;
-    left: 10px;
-    top: 10px;
+    left: 20px;
+    top: 20px;
     margin-top: 0;
-    right: 0;
+    right: 20px;
+    z-index: 10;
   }
 `;
 

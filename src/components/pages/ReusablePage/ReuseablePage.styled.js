@@ -8,28 +8,22 @@ export const PageWrap = styled.section`
     flex-direction: column;
     height: 100vh;
     justify-content: center;
-
-    &.color-1 {
-        background: ${props => props.theme.colors.primary};
-    }
-
-    &.color-2 {
-        background: ${props => props.theme.colors.secondary};
-    }
-
-    &.color-3 {
-        background: ${props => props.theme.colors.tertiary};
-    }
-
-    &.color-4 {
-        background: ${props => props.theme.colors.light};
-    }
+    transition: background-color ${props => props.theme.transition.duration} ${props => props.theme.transition.easeOut};
 `;
 
 export const IndentContent = styled.section`
     font-size: calc(${props => props.theme.fonts.baseSize} + 10vmin);
     padding: 3rem;
     position: relative;
+    text-align: center;
+`;
+
+export const HomeContent = IndentContent.extend`
+    font-size: calc(${props => props.theme.fonts.baseSize} + 2vmin);
+`;
+
+export const HomeContentH1 = styled.h1`
+  font-size: calc(${props => props.theme.fonts.baseSize} + 3vmin);
 `;
 
 export const HeroLink = styled.a`

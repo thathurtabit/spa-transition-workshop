@@ -5,25 +5,19 @@ const RoutesStyled = styled.section`
     transition: transform ${props => props.theme.transition.duration} ${props => props.theme.transition.easeOut},
                 opacity ${props => props.theme.transition.duration} ease-out;
 
-    &.fade-enter {
+    &.fade-enter,
+    &.fade-exit.fade-exit-active {
         opacity: 0;
         transform: translateX(50%);
     }
 
-    &.fade-enter.fade-enter-active {
-        opacity: 1;
-        transform: translateX(0);
-    }
 
+    &.fade-enter.fade-enter-active,
     &.fade-exit {
         opacity: 1;
         transform: translateX(0);
     }
 
-    &.fade-exit.fade-exit-active {
-        opacity: 0;
-        transform: scale(0);
-    }
 `;
 
 export default RoutesStyled;

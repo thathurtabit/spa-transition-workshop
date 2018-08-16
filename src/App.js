@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { ThemeProvider, injectGlobal } from "styled-components";
 import WebFont from "webfontloader";
-import {BrowserRouter, Route} from "react-router-dom";
+import { BrowserRouter, Route } from "react-router-dom";
 import theme from "./theme/theme";
 import GATracker from './helpers/GATracker';
 import Header from './components/molecules/Header/Header';
@@ -20,12 +20,19 @@ injectGlobal`
 
   a:link,
   a:active,
-  a:hover {
+  a:visited {
     text-decoration: none;
+    color: #404040;
+    padding: 5px;
+  }
+
+  a:hover {
+    background-color: #404040;
+    color: #f6ff56;
   }
 
   body {
-    background: #FFF;
+    background: #f6ff56;
     color: #404040;
   }
 
@@ -37,24 +44,23 @@ injectGlobal`
 /* eslint-enable */
 
 WebFont.load({
-  typekit: { id: 'grv2xwj' },
   google: {
-    families: ['Open Sans:400']
+    families: ['Do Hyeon']
   }
 });
 
 const AppWrapper = styled.section`
-  font-family: 'futura-pt', sans-serif;
+  font-family: 'Do Hyeon', sans-serif;
   overflow-x: hidden;
 `;
 
 const App = () => (
   <BrowserRouter basename="/">
     <ThemeProvider theme={theme}>
-        <AppWrapper>
-          <Header />
-          <Route path="/" component={GATracker(Routes, {})} />
-        </AppWrapper>
+      <AppWrapper>
+        <Header />
+        <Route path="/" component={GATracker(Routes, {})} />
+      </AppWrapper>
     </ThemeProvider>
   </BrowserRouter>
 );
