@@ -12,14 +12,17 @@ const Routes = (props) => {
     const locationPath = location.pathname;
     return (
         <TransitionGroup>
-            <CSSTransition key={locationPath} classNames="fade" timeout={500}>
+            <CSSTransition key={locationPath} classNames="fade" timeout={0}>
                 <RoutesStyled>
                     <Switch location={location}>
                         <Route exact path="/" component={() => <Home />} />
-                        <Route exact path="/page-1" component={() => <ReusablePage content="Single Page Apps..." transStyle="trans1" />} />
-                        <Route exact path="/page-2" component={() => <ReusablePage content="are" transStyle="trans2" />} />
-                        <Route exact path="/page-3" component={() => <ReusablePage content="quite" transStyle="trans3" />} />
-                        <Route exact path="/page-4" component={() => <ReusablePage content="nice." transStyle="trans4" />} />
+
+                        {/* Here are your pages. Change 'em up, add more, or remove. I don't care. */}
+                        {/* Also, I'm passing down the '.trans[1]' class to each ReusablePage, you can use that to create different transitions if you wanted */}
+                        <Route exact path="/page-1" component={() => <ReusablePage content="Single Page Apps..." pageStyle="page-style-1" />} />
+                        <Route exact path="/page-2" component={() => <ReusablePage content="are" pageStyle="page-style-2" />} />
+                        <Route exact path="/page-3" component={() => <ReusablePage content="quite" pageStyle="page-style-3" />} />
+                        <Route exact path="/page-4" component={() => <ReusablePage content="nice." pageStyle="page-style-4" />} />
                         <Route component={FourOhFour} />
                     </Switch>
                 </RoutesStyled>

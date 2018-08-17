@@ -1,15 +1,14 @@
 import React from 'react';
 import PropTypes from "prop-types";
-import { PageWrap, IndentContent } from "./ReuseablePage.styled";
+import { IndentContent } from "./ReuseablePage.styled";
+import PageStyled from './Page.styled';
 
 const ReusablePage = (props) => {
-    const { content, transStyle } = props;
+    const { content, pageStyle } = props;
     return (
-        <PageWrap className={transStyle}>
-            <IndentContent>
-                {content}
-            </IndentContent>
-        </PageWrap>
+        <PageStyled className={pageStyle}>
+            <IndentContent className="content">{content} {pageStyle === 'page-style-4' && <span role="img" aria-label="OK emoji">👌</span>}</IndentContent>
+        </PageStyled>
     );
 };
 
@@ -17,5 +16,5 @@ export default ReusablePage;
 
 ReusablePage.propTypes = {
     content: PropTypes.string.isRequired,
-    transStyle: PropTypes.string.isRequired,
+    pageStyle: PropTypes.string.isRequired,
 }
