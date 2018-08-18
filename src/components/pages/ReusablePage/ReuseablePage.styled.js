@@ -1,31 +1,47 @@
 import styled from 'styled-components';
 
 export const PageWrap = styled.section`
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    justify-content: center;
-    transition: background-color ${props => props.theme.transition.duration} ${props => props.theme.transition.easeOut};
+    @media screen and (min-width: ${props => props.theme.breakpoints.md}) {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-height: 100vh;
+    }
 `;
 
-export const IndentContent = styled.section`
+export const IndentTitle = styled.h1`
     font-size: calc(${props => props.theme.fonts.baseSize} + 10vmin);
     padding: 3rem;
     position: relative;
     text-align: center;
 `;
 
-export const HomeContent = IndentContent.extend`
+export const IndentContent = styled.section`
+    font-size: calc(${props => props.theme.fonts.baseSize} + 0.5vmin);
+    font-family: ${props => props.theme.fonts.secondary};
+    line-height: 1.5;
+    margin: 0 auto;
+    max-width: 860px;
+    padding: 3rem;
+    position: relative;
+
+    p {
+        margin-bottom: 2.5rem;
+    }
+`;
+
+export const HomeContent = styled.section`
     font-size: calc(${props => props.theme.fonts.baseSize} + 0.1vmin);
     line-height: 1.4;
-    margin: 0 auto;
     max-width: 480px;
+    padding: 3rem;
     text-align: left;
 
     &.home-stuff a {
         color: ${props => props.theme.colors.primary};
         position: relative;
+        z-index: 1;
 
         &::before {
             background-color: ${props => props.theme.colors.dark};
@@ -54,12 +70,14 @@ export const HomeContent = IndentContent.extend`
         padding: 0;
     }
 
-    .ul-row {
-        display: flex;
-        list-style-type: none;
+    @media screen and (min-width: ${props => props.theme.breakpoints.md}) {
+        .ul-row {
+            display: flex;
+            list-style-type: none;
 
-        li {
-            margin-right: 10px;
+            li {
+                margin-right: 10px;
+            }
         }
     }
 

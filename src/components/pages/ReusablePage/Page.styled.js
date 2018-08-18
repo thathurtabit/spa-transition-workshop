@@ -1,11 +1,12 @@
 import styled from 'styled-components';
 
-const PageWrap = styled.section`
+const PageStyled = styled.section`
     align-items: center;
     display: flex;
     flex-direction: column;
-    height: 100vh;
     justify-content: center;
+    margin-top: 10vh;
+    overflow: hidden;
 
     &.page-style-1 {
         /* Stuff here ? */
@@ -26,9 +27,9 @@ const PageWrap = styled.section`
             display: inline-block;
             opacity: 0;
             transform: translateY(50%);
-            transition: transform 0.5s ${props => props.theme.transition.cubicBez},
-                        opacity 0.5s ${props => props.theme.transition.easeOut};
-            transition-delay: 0.5s;
+            transition: transform 0.75s ${props => props.theme.transition.cubicBez},
+                        opacity 0.75s ${props => props.theme.transition.easeOut};
+            transition-delay: 1s;
 
             .fade-enter-done & {
                 opacity: 1;
@@ -38,4 +39,4 @@ const PageWrap = styled.section`
     }
 `;
 
-export default PageWrap;
+export default PageStyled;

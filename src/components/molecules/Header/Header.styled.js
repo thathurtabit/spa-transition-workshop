@@ -33,10 +33,11 @@ export const HeaderNavUl = styled.ul`
 
 export const HeaderNavLi = styled.li`
   list-style-type: none;
-  margin: 20px;
+  margin: 10px;
 
   a {
     align-items: center;
+    background: ${props => props.theme.colors.primary};
     border-radius: 100%;
     display: flex;
     flex-direction: column;
@@ -50,6 +51,10 @@ export const HeaderNavLi = styled.li`
       color: ${props => props.theme.colors.primary};
     }
   }
+
+  @media screen and (min-width: ${props => props.theme.breakpoints.md}) {
+    margin: 20px;
+  }
 `;
 
 const HeaderStyled = styled.header`
@@ -57,7 +62,7 @@ const HeaderStyled = styled.header`
   display: flex;
   color: ${props => props.theme.colors.light};
   flex-direction: row;
-  margin-top: 15px;
+  margin: 25px 15px 15px;
   text-align: center;
   position: relative;
 

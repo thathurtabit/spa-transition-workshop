@@ -6,16 +6,15 @@ import theme from "./theme/theme";
 import GATracker from './helpers/GATracker';
 import Header from './components/molecules/Header/Header';
 import Routes from './components/organisms/Routes/Routes';
+import ScrollToTop from './helpers/ScrollToTop';
 
 /* eslint-disable */
 injectGlobal`
   html,
   body {
     height: 100%;
-    overflow: hidden;
     padding: 0;
     margin: 0;
-    min-height: 100%;
   }
 
   a:link,
@@ -37,19 +36,20 @@ injectGlobal`
   }
 
   ::selection {
-    background: #ffefd5;
-    color: #404040;
+    background: #404040;
+    color: #f6ff56;
   }
 `;
 /* eslint-enable */
 
 WebFont.load({
   google: {
-    families: ['Do Hyeon']
+    families: ['Do Hyeon', 'PT Sans']
   }
 });
 
 const AppWrapper = styled.section`
+  background: ${props => props.theme.colors.primary};
   font-family: 'Do Hyeon', sans-serif;
   overflow-x: hidden;
 `;
@@ -58,8 +58,10 @@ const App = () => (
   <BrowserRouter basename="/">
     <ThemeProvider theme={theme}>
       <AppWrapper>
-        <Header />
-        <Route path="/" component={GATracker(Routes, {})} />
+        <ScrollToTop>
+          <Header />
+          <Route path="/" component={GATracker(Routes, {})} />
+        </ScrollToTop>
       </AppWrapper>
     </ThemeProvider>
   </BrowserRouter>
